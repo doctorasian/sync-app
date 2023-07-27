@@ -1,0 +1,122 @@
+:root {
+    --bg_dark: #1e2030;
+    --bg: #222436;
+    --bg_highlight: #2f334d;
+    --terminal_black: #444a73;
+    --fg: #c8d3f5;
+    --fg_dark: #828bb8;
+    --fg_gutter: #3b4261;
+    --dark3: #545c7e;
+    --comment: #7a88cf;
+    --dark5: #737aa2;
+    --blue0: #3e68d7;
+    --blue: #82aaff;
+    --cyan: #86e1fc;
+    --blue1: #65bcff;
+    --blue2: #0db9d7;
+    --blue5: #89ddff;
+    --blue6: #b4f9f8;
+    --blue7: #394b70;
+    --purple: #fca7ea;
+    --magenta2: #ff007c;
+    --magenta: #c099ff;
+    --orange: #ff966c;
+    --yellow: #ffc777;
+    --green: #c3e88d;
+    --green1: #4fd6be;
+    --green2: #41a6b5;
+    --teal: #4fd6be;
+    --red: #ff757f;
+    --red1: #c53b53;
+  }
+
+*{
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, 
+                 sans-serif, "Apple Color Emoji", "Segoe UI Emoji", 
+                 "Segoe UI Symbol";
+    color: var(--fg);
+    margin: 0;
+}
+
+.btn {
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
+p.btn,
+a.btn,
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25em 0.75em; /*Padding resizes with font size*/
+    text-align: center;
+    line-height: 1.1;
+    user-select: none;
+}
+
+.done-btn {
+    background-color: var(--terminal_black);
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+    min-width: 10ch;
+    min-height: 44px;
+    font-size: 24px;
+    transition: 100ms all ease-in-out;
+}
+
+.done-btn:hover {
+    border: 3px var(--blue6) solid;
+}
+
+.main-container {
+    display: flex;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    min-width: 70%;
+}
+
+.sidebar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--bg_dark);
+    min-width: 20%;
+    max-width: 30%;
+    min-height: 100vh;
+    animation: none;
+    overflow: auto;
+    resize: horizontal;
+}
+
+@keyframes slide-in {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+    from { transform: translateX(0%); }
+    to { transform: translateX(-100%); }
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #c8d3f5;
+}
